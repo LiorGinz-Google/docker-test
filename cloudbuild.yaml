@@ -1,5 +1,5 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/hangouts-chat-integration/github.com/liorginz-google/docker-test@sha256:ff3821b95d69c84b9188548210d740db34f1ee497c20738e2b3451276dce6473', '.']
+  args: ['build', '-t', 'gcr.io/hangouts-chat-integration/docker-test:$SHORT_SHA', '.']
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push','gcr.io/hangouts-chat-integration/github.com/liorginz-google/docker-test@sha256:ff3821b95d69c84b9188548210d740db34f1ee497c20738e2b3451276dce6473']
+  args: ['push','gcr.io/hangouts-chat-integration/docker-test:$SHORT_SHA']
