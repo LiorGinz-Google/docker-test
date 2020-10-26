@@ -3,3 +3,6 @@ steps:
   args: ['build', '-t', 'gcr.io/hangouts-chat-integration/docker-test:$SHORT_SHA', '.']
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push','gcr.io/hangouts-chat-integration/docker-test:$SHORT_SHA']
+- name: 'gcr.io/cloud-builders/gcloud'
+  args: ['run', 'deploy', 'hangouts-chat-integration', '--region=us-central1', '--platform=managed', '--image=gcr.io/hangouts-chat-integration/docker-test:$SHORT_SHA']
+ 
