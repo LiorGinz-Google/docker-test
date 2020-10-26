@@ -2,7 +2,7 @@ const http = require('http')
 
 const server = http.createServer((req, res) => {
     console.log('New Connection')
-    res.end('Hello Lior')
+    res.end('Hello Lior Ginzberg')
 })
 const PORT = process.env.PORT || 8080
 server.listen(PORT, () => console.log('listening'))
